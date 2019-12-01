@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:i0="http://ws.aramex.net/ShippingAPI/v1/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service_1_0" targetNamespace="http://tempuri.org">
+   <wsp:Policy wsu:Id="BasicHttpBinding_Service_1_01_policy">
+      <wsp:ExactlyOne>
+         <wsp:All>
+            <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+               <wsp:Policy>
+                  <sp:TransportToken>
+                     <wsp:Policy>
+                        <sp:HttpsToken RequireClientCertificate="false" />
+                     </wsp:Policy>
+                  </sp:TransportToken>
+                  <sp:AlgorithmSuite>
+                     <wsp:Policy>
+                        <sp:Basic256 />
+                     </wsp:Policy>
+                  </sp:AlgorithmSuite>
+                  <sp:Layout>
+                     <wsp:Policy>
+                        <sp:Strict />
+                     </wsp:Policy>
+                  </sp:Layout>
+               </wsp:Policy>
+            </sp:TransportBinding>
+         </wsp:All>
+      </wsp:ExactlyOne>
+   </wsp:Policy>
+   <wsdl:import namespace="http://ws.aramex.net/ShippingAPI/v1/" location="https://ws.aramex.net/ShippingAPI.V2/Location/Service_1_0.svc?wsdl=wsdl0" />
+   <wsdl:types />
+   <wsdl:binding name="BasicHttpBinding_Service_1_0" type="i0:Service_1_0">
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+      <wsdl:operation name="ValidateAddress">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/ValidateAddress" style="document" />
+         <wsdl:input name="AddressValidationRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="AddressValidationResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchCountries">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchCountries" style="document" />
+         <wsdl:input name="CountriesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="CountriesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchCountry">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchCountry" style="document" />
+         <wsdl:input name="CountryFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="CountryFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchCities">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchCities" style="document" />
+         <wsdl:input name="CitiesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="CitiesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchOffices">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchOffices" style="document" />
+         <wsdl:input name="OfficesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="OfficesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchStates">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchStates" style="document" />
+         <wsdl:input name="StatesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="StatesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="IsAddressServiced">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/IsAddressServiced" style="document" />
+         <wsdl:input name="AddressServiceabilityRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="AddressServiceabilityResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:binding name="BasicHttpBinding_Service_1_01" type="i0:Service_1_0">
+      <wsp:PolicyReference URI="#BasicHttpBinding_Service_1_01_policy" />
+      <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+      <wsdl:operation name="ValidateAddress">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/ValidateAddress" style="document" />
+         <wsdl:input name="AddressValidationRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="AddressValidationResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchCountries">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchCountries" style="document" />
+         <wsdl:input name="CountriesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="CountriesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchCountry">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchCountry" style="document" />
+         <wsdl:input name="CountryFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="CountryFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchCities">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchCities" style="document" />
+         <wsdl:input name="CitiesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="CitiesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchOffices">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchOffices" style="document" />
+         <wsdl:input name="OfficesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="OfficesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="FetchStates">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/FetchStates" style="document" />
+         <wsdl:input name="StatesFetchingRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="StatesFetchingResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+      <wsdl:operation name="IsAddressServiced">
+         <soap:operation soapAction="http://ws.aramex.net/ShippingAPI/v1/Service_1_0/IsAddressServiced" style="document" />
+         <wsdl:input name="AddressServiceabilityRequest">
+            <soap:body use="literal" />
+         </wsdl:input>
+         <wsdl:output name="AddressServiceabilityResponse">
+            <soap:body use="literal" />
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="Service_1_0">
+      <wsdl:port name="BasicHttpBinding_Service_1_0" binding="tns:BasicHttpBinding_Service_1_0">
+         <soap:address location="http://ws.aramex.net/ShippingAPI.V2/Location/Service_1_0.svc" />
+      </wsdl:port>
+      <wsdl:port name="BasicHttpBinding_Service_1_01" binding="tns:BasicHttpBinding_Service_1_01">
+         <soap:address location="https://ws.aramex.net/ShippingAPI.V2/Location/Service_1_0.svc" />
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
