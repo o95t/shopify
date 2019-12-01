@@ -96,7 +96,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
-    ffi (1.9.0)
+    ffi (1.11.3)
     formatador (0.2.4)
     guard (1.8.2)
       formatador (>= 0.2.4)
